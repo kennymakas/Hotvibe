@@ -4,22 +4,22 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node server.cjs",
+    "dev": "vite",
     "build": "vite build",
-    "start": "node server.cjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cf:dev": "npm run build && npx wrangler dev",
+    "cf:deploy": "npm run build && npx wrangler deploy",
+    "cf:d1:migrate": "npx wrangler d1 migrations apply hotvibe-db --remote",
+    "cf:d1:query": "npx wrangler d1 execute hotvibe-db --remote",
+    "cf:r2:list": "npx wrangler r2 object list hotvibe-media",
+    "start": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
     "vite": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest",
-    "bcryptjs": "latest",
-    "cors": "latest",
-    "express": "latest",
-    "jsonwebtoken": "latest",
-    "multer": "latest"
+    "lucide-react": "latest"
   },
   "devDependencies": {}
 }
