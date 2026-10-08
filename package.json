@@ -1,0 +1,25 @@
+{
+  "name": "hotvibe",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cf:dev": "npm run build && npx wrangler dev",
+    "cf:deploy": "npm run build && npx wrangler deploy",
+    "cf:d1:migrate": "npx wrangler d1 migrations apply hotvibe-db --remote",
+    "cf:d1:query": "npx wrangler d1 execute hotvibe-db --remote",
+    "cf:r2:list": "npx wrangler r2 object list hotvibe-media",
+    "start": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {}
+}
